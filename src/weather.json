@@ -1,0 +1,41 @@
+{
+  "location": {
+    "name": "Staphorst",
+    "region": "Overijssel",
+    "country": "Netherlands",
+    "lat": 52.65,
+    "lon": 6.21,
+    "tz_id": "Europe/Amsterdam",
+    "localtime_epoch": 1699551076,
+    "localtime": "2023-11-09 18:31"
+  },
+  "current": {
+    "last_updated_epoch": 1699551000,
+    "last_updated": "2023-11-09 18:30",
+    "temp_c": 8.0,
+    "temp_f": 46.4,
+    "is_day": 0,
+    "condition": {
+      "text": "Moderate or heavy rain shower",
+      "icon": "//cdn.weatherapi.com/weather/64x64/night/356.png",
+      "code": 1243
+    },
+    "wind_mph": 6.9,
+    "wind_kph": 11.2,
+    "wind_degree": 220,
+    "wind_dir": "SW",
+    "pressure_mb": 996.0,
+    "pressure_in": 29.41,
+    "precip_mm": 0.13,
+    "precip_in": 0.01,
+    "humidity": 93,
+    "cloud": 100,
+    "feelslike_c": 4.2,
+    "feelslike_f": 39.6,
+    "vis_km": 6.0,
+    "vis_miles": 3.0,
+    "uv": 1.0,
+    "gust_mph": 26.3,
+    "gust_kph": 42.3
+  }
+}

@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,800;1,200;1,900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Poppins;
+  background-color: whitesmoke;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  background-color: #DDF2FD;
+  padding: 2vw;
+  margin-bottom: 5vw;
+}
+
+.search-input {
+  border: 2px solid #164863;
+  padding-top: 0.8vw;
+  padding-bottom: 0.8vw;
+  padding-left: 1vw;
+  padding-right: 12vw;
+  font-size: 16px;
+}
+
+.weather-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.city {
+  font-size: 40px;
+  font-weight: 600;
+  color: #164863;
+}
+
+.city-info-wrapper {
+  margin-bottom: 50px;
+}
+
+.city-info {
+  font-size: 16px;
+  color: rgb(143, 143, 143);
+}
+
+.temp-wrapper {
+  margin-bottom: 100px;
+}
+
+.temp-container {
+  display: flex;
+  align-items: flex-start;
+  border: 1px solid black;
+}
+
+.actual-temp {
+  font-size: 100px;
+  color: #427D9D;
+}
+
+.unit {
+  font-size: 40px;
+  font-weight: lighter;
+  color: rgb(94, 94, 94);
+}
+
+/* .unit {
+  font-size: 30px;
+  color: rgb(177, 177, 177);
+  font-weight: 400;
+} */
+
