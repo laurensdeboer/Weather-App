@@ -3,7 +3,6 @@ import DateObject from "react-date-object";
 import "./Date.css";
 
 const date = new DateObject();
-// console.log(date);
 
 const Date = () => {
   return (

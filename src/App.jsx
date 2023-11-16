@@ -1,43 +1,54 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Date from "./Components/Date";
+import SearchBar from "./Components/SearchBar";
+import WeatherInfo from "./Components/WeatherInfo";
+
+import "./App.css";
+import Temperature from "./Components/Temperature";
 
 function App() {
-  const [data, setData] = useState({
-    location: {
-      name: "",
-    },
-    current: {
-      temp_c: "",
-    },
-  });
+  const [data, setData] = useState([]);
 
-  const [location, setLocation] = useState("");
-
-  const url = `http://api.weatherapi.com/v1/current.json?key=f489db9065b44ecbbb5172819230911&q=${location}`;
-
-  const searchLocation = (event) => {
-    if (event.key === "Enter") {
-      axios.get(url).then((response) => {
-        setData(response.data);
-        console.log(response.data);
-      });
-      setLocation("");
-    }
+  const handleSearchChange = (value) => {
+    const url = `http://api.weatherapi.com/v1/current.json?key=f489db9065b44ecbbb5172819230911&q=${value}`;
+    axios.get(url).then((response) => {
+      setData(response.data);
+      console.log(response.data);
+    });
   };
 
   return (
     <div className="app">
-      <div className="search">
-        <input
-          class="search-input"
-          type="text"
-          value={location}
-          onChange={(event) => setLocation(event.target.value)}
-          onKeyDown={searchLocation}
-          placeholder="Enter a location here"
+      <Date />
+      <SearchBar onSearchChange={handleSearchChange} />
+      <Temperature
+        loc={data.location?.name}
+        temp={data.current?.temp_c}
+        reg={data.location?.region}
+      />
+      <div className="info-cards">
+        <WeatherInfo
+          img="feels.jpeg"
+          title="feels like"
+          data={Math.round(data.current?.feelslike_c)}
+          unit="°C"
+        />
+        <WeatherInfo
+          img="wind.jpg"
+          title="wind"
+          data={Math.round(data.current?.wind_kph)}
+          unit="kph"
+        />
+        <WeatherInfo
+          img="hum.jpg"
+          title="humidity"
+          data={Math.round(data.current?.humidity)}
+          unit="%"
         />
       </div>
-      <div className="weather-data">
+
+      {/* <div className="weather-data">
         <div className="location-info">
           <div className="city">
             <p>{data.location?.name}</p>
@@ -66,7 +77,7 @@ function App() {
             <p>12 km/h</p>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
